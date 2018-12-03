@@ -3,21 +3,21 @@ function createQueue() {
 
   return {
     add(item){
-        queue.unshift(item);
+      queue.unshift(item);
     },
     dequeue(){
-        return queue.pop();
+      return queue.pop();
     },
     peek(){
-        return queue[queue.length -1];
+      return queue[queue.length -1];
     },
     get length() {
       return queue.length
     },
     isEmpty(){
-        return queue.length === 0;
+      return queue.length === 0;
     }
-  }
+  };
 }
 
 
@@ -40,3 +40,5 @@ newQueue.dequeue();
 
 console.log(newQueue.peek(), newQueue.length, newQueue.isEmpty());
 // undefined, 0, true
+
+module.exports.createQueue = createQueue;
