@@ -40,12 +40,13 @@ function createGraph(directed = false) {
     },
 
     print() {
+      console.log('nodes', nodes);
       return nodes
-      .map(({ children, key }) => {
+      .map(({ neighbors, key }) => {
         let result = `${key}`;
 
-        if (children.length) {
-          result += ` => ${children
+        if (neighbors.length) {
+          result += ` => ${neighbors
           .map(node => node.key)
           .join(' ')}`;
         }
@@ -71,4 +72,6 @@ graph.addEdge('Corey', 'Daisy');
 graph.addEdge('Daisy', 'Kayleigh');
 
 
-graph.print();
+console.log(graph.print());
+
+module.exports.createGraph = createGraph;
